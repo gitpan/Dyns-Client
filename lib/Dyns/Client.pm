@@ -12,7 +12,7 @@ use Socket;
 use Net::hostent;
 use CGI::Util qw( escape );
 
-$VERSION = '0.5';
+$VERSION = '0.6';
 
 =head1 NAME
 

@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'		=> 'Dyns::Client',
-    'VERSION_FROM'	=> 'lib/Client.pm',
+    'VERSION_FROM'	=> 'lib/Dyns/Client.pm',
     'PREREQ_PM'		=> {
 		'LWP::UserAgent' => 0,
 		'HTTP::Request' => 0,
@@ -12,6 +12,6 @@ WriteMakefile(
 		'CGI::Util' => 0
 	}, 
     ($] >= 5.005 ?    
-      (ABSTRACT_FROM => 'lib/Client.pm', # retrieve abstract from module
+      (ABSTRACT_FROM => 'lib/Dyns/Client.pm', # retrieve abstract from module
        AUTHOR     => 'Johan Van den Brande <johan@vandenbrande.com>') : ()),
 );

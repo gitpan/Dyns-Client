@@ -2,6 +2,6 @@ Changes
 MANIFEST			This list of files
 Makefile.PL
 README
-lib/Client.pm
+lib/Dyns/Client.pm
 scripts/dynsupdate
 test.pl

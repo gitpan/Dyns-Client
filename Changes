@@ -1,5 +1,8 @@
 Revision history for Perl extension Dyns::Client.
 
+0.06 Wed May 14 10:40:24 PDT 2003
+	- Moved CLient.pm to lib/Dyns/Client.pm, seemed to break on some lini.
+
 0.05 Tue May 13 23:05:17 PDT 2003
 	- On suggestion from Slaven Rezic, I added a test suite that asks for
 	  testing parameters.
