@@ -12,7 +12,7 @@ use Socket;
 use Net::hostent;
 use CGI::Util qw( escape );
 
-$VERSION = '0.4';
+$VERSION = '0.5';
 
 =head1 NAME
 
@@ -114,10 +114,24 @@ sub get_ip {
 	my ($self, $interface) = @_;
 
 	return undef unless $interface;
-	
-	my $ip = `/sbin/ifconfig $interface`;
-	$ip =~ s/^.*inet addr:([0-9]{1,3}(\.[0-9]{1,3}){3}).*$/$1/s;
 
+    my $win32 = 0;
+	$win32 = 1 if  $^O =~ /win32|cygwin/i;
+
+	my $ip;
+	if ($win32) {
+		my $ipconfig = `ipconfig`;
+		$ipconfig =~ /IP.+?: ([0-9]{1,3}(\.[0-9]{1,3}){3})$/s;
+		$ip = $1;
+		warn "Cannot get IP address from ipconfig output:\n$ipconfig"
+			unless $ip;
+	} else {
+		$ip = `/sbin/ifconfig $interface`;
+		if ($ip !~ s/^.*inet (?:addr:)?([0-9]{1,3}(\.[0-9]{1,3}){3}).*$/$1/s) {
+			warn "Cannot get IP address from ifconfig output:\n$ip";
+			return undef;
+		}
+	}
 	return $ip;
 }
 

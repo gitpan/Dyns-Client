@@ -1,5 +1,14 @@
 Revision history for Perl extension Dyns::Client.
 
+0.05 Tue May 13 23:05:17 PDT 2003
+	- On suggestion from Slaven Rezic, I added a test suite that asks for
+	  testing parameters.
+	- On suggestion from Slaven Rezic, I added his standard script to the
+	  distribution. Added support for Pod::Usage to the script.
+	- On suggestion from Slaven Rezic, I applied his patch to also find the
+	  correct IP address on FreeBSD. I also added (preliminary) support for
+	  Win32.
+
 0.04  Thu Apr  3 01:02:35 CEST 2003
 	- Prepared for CPAN
 
