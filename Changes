@@ -1,0 +1,16 @@
+Revision history for Perl extension Dyns::Client.
+
+0.04  Thu Apr  3 01:02:35 CEST 2003
+	- Prepared for CPAN
+
+0.03  Wed May 22 23:33:42 CEST 2002
+	- Fixed the get_ip(), now has a get_ip('iface') method.
+	- Fixed the host parameter for dyns (wrongly documented in the specs)
+
+0.02  Wed May 22 15:20:38 CEST 2002
+	- First version
+
+0.01  Wed May 22 13:54:30 2002
+	- original version; created by h2xs 1.21 with options
+		-XA -n Dyns::Client
+
